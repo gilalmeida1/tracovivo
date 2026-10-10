@@ -177,65 +177,74 @@ html.dark body {
 
 /* Header - garantir contraste quando scrollado */
 html.dark header {
-  background-color: rgba(18, 10, 33, 0.95) !important;
+  background-color: rgba(255, 246, 233, 0.95) !important;
 }
 
 html.dark .sticker {
-  border-color: #fff6e9;
-  box-shadow: 6px 6px 0 #fff6e9;
+  border-color: #1b1030;
+  box-shadow: 6px 6px 0 #1b1030;
 }
 
 html.dark .sticker-sm {
-  border-color: #fff6e9;
-  box-shadow: 4px 4px 0 #fff6e9;
+  border-color: #1b1030;
+  box-shadow: 4px 4px 0 #1b1030;
 }
 
 html.dark .btn {
-  border-color: #fff6e9;
-  box-shadow: 4px 4px 0 #fff6e9;
+  border-color: #1b1030;
+  box-shadow: 4px 4px 0 #1b1030;
 }
 
 html.dark .btn:hover {
-  box-shadow: 6px 6px 0 #fff6e9;
+  box-shadow: 6px 6px 0 #1b1030;
 }
 
 html.dark .btn:active {
-  box-shadow: 1px 1px 0 #fff6e9;
+  box-shadow: 1px 1px 0 #1b1030;
 }
 
 html.dark .field {
-  background-color: #1b1030;
-  color: #fff6e9;
-  border-color: #fff6e9;
+  background-color: #fff6e9;
+  color: #1b1030;
+  border-color: #1b1030;
 }
 
 /* Cores de fundo no modo escuro */
 html.dark .bg-paper { background-color: #1b1030 !important; }
 html.dark .bg-white { background-color: #251745 !important; }
 html.dark .bg-sun { background-color: #ffd23f !important; }
-html.dark header .bg-paper { background-color: rgba(18, 10, 33, 0.95) !important; }
 
-/* Cores de texto no modo escuro - CONTRASTE GARANTIDO */
-html.dark .text-ink { color: #fff6e9 !important; }
-html.dark .text-ink\/80 { color: rgba(255, 246, 233, 0.8) !important; }
-html.dark .text-ink\/85 { color: rgba(255, 246, 233, 0.85) !important; }
-html.dark .text-ink\/60 { color: rgba(255, 246, 233, 0.6) !important; }
+/* Cores de texto no modo escuro - TEXTO ESCURO para contraste com fundos claros */
+html.dark .text-ink { color: #1b1030 !important; }
+html.dark .text-ink\/80 { color: rgba(27, 16, 48, 0.8) !important; }
+html.dark .text-ink\/85 { color: rgba(27, 16, 48, 0.85) !important; }
+html.dark .text-ink\/60 { color: rgba(27, 16, 48, 0.6) !important; }
+html.dark .text-paper { color: #1b1030 !important; }
 
-/* LOGO - garantir que "Traço" seja visível */
-html.dark .text-ink { color: #fff6e9 !important; }
-html.dark header span.text-ink { color: #fff6e9 !important; }
+/* MENU DE NAVEGAÇÃO - sempre escuro no modo escuro */
+html.dark nav a {
+  color: #1b1030 !important;
+}
 
-/* FAQ - garantir que as perguntas sejam MUITO visíveis */
+html.dark header .text-ink {
+  color: #1b1030 !important;
+}
+
+/* LOGO - "Traço" sempre escuro, "Vivo" sempre rosa */
+html.dark .text-electric { color: #0044ff !important; }
+html.dark header span.font-display { color: #1b1030 !important; }
+
+/* FAQ - texto ESCURO nos cards claros */
 html.dark #duvidas button {
-  color: #fff6e9 !important;
+  color: #1b1030 !important;
 }
 
 html.dark #duvidas button > span {
-  color: #fff6e9 !important;
+  color: #1b1030 !important;
 }
 
 html.dark #duvidas .bg-white {
-  background-color: #251745 !important;
+  background-color: #fff6e9 !important;
 }
 
 html.dark #duvidas .bg-sun {
@@ -246,20 +255,16 @@ html.dark #duvidas .text-ink\/85 {
   color: rgba(27, 16, 48, 0.9) !important;
 }
 
-/* Forçar cor do texto das perguntas do FAQ */
+/* Forçar cor escura nas perguntas do FAQ */
 html.dark #duvidas button.font-display {
-  color: #fff6e9 !important;
+  color: #1b1030 !important;
 }
 
 /* Bordas no modo escuro */
-html.dark .border-ink { border-color: #fff6e9; }
+html.dark .border-ink { border-color: #1b1030; }
 
-/* Marcador - ajustar para não sobrepor */
+/* Marcador - roxo no modo escuro */
 html.dark .marker {
   background: linear-gradient(transparent 58%, #7b4dff 58%, #7b4dff 90%, transparent 90%);
   padding: 0 0.15em;
 }
-
-/* Logo - garantir visibilidade */
-html.dark .text-paper { color: #fff6e9 !important; }
-html.dark .text-electric { color: #0044ff !important; }

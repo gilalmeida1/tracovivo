@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fundo rosa circular (igual ao logo) -->
+  <rect width="64" height="64" rx="14" fill="#ff3d7f" />
+  
+  <!-- O rabisco (o "Traço") -->
+  <path 
+    d="M10 44 C 18 20, 28 52, 36 28 S 50 16, 54 24" 
+    stroke="#fff6e9" 
+    stroke-width="7" 
+    stroke-linecap="round" 
+    fill="none" 
+  />
+  
+  <!-- A bolinha amarela (a "ponta do lápis" / o "Vivo") -->
+  <circle 
+    cx="54" 
+    cy="24" 
+    r="6" 
+    fill="#ffd23f" 
+    stroke="#1b1030" 
+    stroke-width="2.5" 
+  />
+</svg>

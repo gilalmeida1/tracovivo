@@ -177,7 +177,7 @@ html.dark body {
 
 /* Header - garantir contraste quando scrollado */
 html.dark header {
-  background-color: rgba(18, 10, 33, 0.95);
+  background-color: rgba(18, 10, 33, 0.95) !important;
 }
 
 html.dark .sticker {
@@ -210,18 +210,27 @@ html.dark .field {
 }
 
 /* Cores de fundo no modo escuro */
-html.dark .bg-paper { background-color: #1b1030; }
-html.dark .bg-white { background-color: #251745; }
-html.dark .bg-sun { background-color: #ffd23f; }
+html.dark .bg-paper { background-color: #1b1030 !important; }
+html.dark .bg-white { background-color: #251745 !important; }
+html.dark .bg-sun { background-color: #ffd23f !important; }
+html.dark header .bg-paper { background-color: rgba(18, 10, 33, 0.95) !important; }
 
 /* Cores de texto no modo escuro - CONTRASTE GARANTIDO */
-html.dark .text-ink { color: #fff6e9; }
-html.dark .text-ink\/80 { color: rgba(255, 246, 233, 0.8); }
-html.dark .text-ink\/85 { color: rgba(255, 246, 233, 0.85); }
-html.dark .text-ink\/60 { color: rgba(255, 246, 233, 0.6); }
+html.dark .text-ink { color: #fff6e9 !important; }
+html.dark .text-ink\/80 { color: rgba(255, 246, 233, 0.8) !important; }
+html.dark .text-ink\/85 { color: rgba(255, 246, 233, 0.85) !important; }
+html.dark .text-ink\/60 { color: rgba(255, 246, 233, 0.6) !important; }
 
-/* FAQ - garantir que as perguntas sejam visíveis */
+/* LOGO - garantir que "Traço" seja visível */
+html.dark .text-ink { color: #fff6e9 !important; }
+html.dark header span.text-ink { color: #fff6e9 !important; }
+
+/* FAQ - garantir que as perguntas sejam MUITO visíveis */
 html.dark #duvidas button {
+  color: #fff6e9 !important;
+}
+
+html.dark #duvidas button > span {
   color: #fff6e9 !important;
 }
 
@@ -237,6 +246,11 @@ html.dark #duvidas .text-ink\/85 {
   color: rgba(27, 16, 48, 0.9) !important;
 }
 
+/* Forçar cor do texto das perguntas do FAQ */
+html.dark #duvidas button.font-display {
+  color: #fff6e9 !important;
+}
+
 /* Bordas no modo escuro */
 html.dark .border-ink { border-color: #fff6e9; }
 
@@ -247,5 +261,5 @@ html.dark .marker {
 }
 
 /* Logo - garantir visibilidade */
-html.dark .text-paper { color: #fff6e9; }
-html.dark .text-electric { color: #0044ff; }
+html.dark .text-paper { color: #fff6e9 !important; }
+html.dark .text-electric { color: #0044ff !important; }

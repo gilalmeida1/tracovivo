@@ -175,6 +175,11 @@ html.dark body {
   background-image: radial-gradient(rgba(255, 246, 233, 0.06) 1px, transparent 1px);
 }
 
+/* Header - garantir contraste quando scrollado */
+html.dark header {
+  background-color: rgba(18, 10, 33, 0.95);
+}
+
 html.dark .sticker {
   border-color: #fff6e9;
   box-shadow: 6px 6px 0 #fff6e9;
@@ -204,10 +209,43 @@ html.dark .field {
   border-color: #fff6e9;
 }
 
+/* Cores de fundo no modo escuro */
 html.dark .bg-paper { background-color: #1b1030; }
 html.dark .bg-white { background-color: #251745; }
+html.dark .bg-sun { background-color: #ffd23f; }
+
+/* Cores de texto no modo escuro - CONTRASTE GARANTIDO */
 html.dark .text-ink { color: #fff6e9; }
 html.dark .text-ink\/80 { color: rgba(255, 246, 233, 0.8); }
 html.dark .text-ink\/85 { color: rgba(255, 246, 233, 0.85); }
 html.dark .text-ink\/60 { color: rgba(255, 246, 233, 0.6); }
+
+/* FAQ - garantir que as perguntas sejam visíveis */
+html.dark #duvidas button {
+  color: #fff6e9 !important;
+}
+
+html.dark #duvidas .bg-white {
+  background-color: #251745 !important;
+}
+
+html.dark #duvidas .bg-sun {
+  background-color: #ffd23f !important;
+}
+
+html.dark #duvidas .text-ink\/85 {
+  color: rgba(27, 16, 48, 0.9) !important;
+}
+
+/* Bordas no modo escuro */
 html.dark .border-ink { border-color: #fff6e9; }
+
+/* Marcador - ajustar para não sobrepor */
+html.dark .marker {
+  background: linear-gradient(transparent 58%, #7b4dff 58%, #7b4dff 90%, transparent 90%);
+  padding: 0 0.15em;
+}
+
+/* Logo - garantir visibilidade */
+html.dark .text-paper { color: #fff6e9; }
+html.dark .text-electric { color: #0044ff; }

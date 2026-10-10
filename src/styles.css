@@ -175,11 +175,20 @@ html.dark body {
   background-image: radial-gradient(rgba(255, 246, 233, 0.06) 1px, transparent 1px);
 }
 
-/* Header - garantir contraste quando scrollado */
+/* Header - fundo claro quando scrollado */
 html.dark header {
   background-color: rgba(255, 246, 233, 0.95) !important;
 }
 
+html.dark header nav a {
+  color: #1b1030 !important;
+}
+
+html.dark header .text-ink {
+  color: #1b1030 !important;
+}
+
+/* Stickers - bordas escuras */
 html.dark .sticker {
   border-color: #1b1030;
   box-shadow: 6px 6px 0 #1b1030;
@@ -214,33 +223,41 @@ html.dark .bg-paper { background-color: #1b1030 !important; }
 html.dark .bg-white { background-color: #251745 !important; }
 html.dark .bg-sun { background-color: #ffd23f !important; }
 
-/* Cores de texto no modo escuro - TEXTO ESCURO para contraste com fundos claros */
-html.dark .text-ink { color: #1b1030 !important; }
-html.dark .text-ink\/80 { color: rgba(27, 16, 48, 0.8) !important; }
-html.dark .text-ink\/85 { color: rgba(27, 16, 48, 0.85) !important; }
-html.dark .text-ink\/60 { color: rgba(27, 16, 48, 0.6) !important; }
-html.dark .text-paper { color: #1b1030 !important; }
-
-/* MENU DE NAVEGAÇÃO - sempre escuro no modo escuro */
-html.dark nav a {
-  color: #1b1030 !important;
+/* SEÇÕES COM FUNDO ESCURO (Hero, HowItWorks, QuoteForm, Footer) - TEXTO CLARO */
+html.dark #topo .text-ink,
+html.dark #topo .text-ink\/85,
+html.dark #topo .text-ink\/80,
+html.dark #topo .text-ink\/60,
+html.dark #como-funciona .text-ink,
+html.dark #como-funciona .text-ink\/85,
+html.dark #como-funciona .text-ink\/80,
+html.dark #como-funciona .text-ink\/60,
+html.dark #orcamento .text-ink,
+html.dark #orcamento .text-ink\/85,
+html.dark #orcamento .text-ink\/80,
+html.dark #orcamento .text-ink\/60,
+html.dark footer .text-ink,
+html.dark footer .text-ink\/85,
+html.dark footer .text-ink\/80,
+html.dark footer .text-ink\/60 {
+  color: #fff6e9 !important;
 }
 
-html.dark header .text-ink {
-  color: #1b1030 !important;
+/* Ícones dos contatos no modo escuro - BRANCOS */
+html.dark #orcamento svg,
+html.dark footer svg {
+  color: #fff6e9 !important;
+  fill: #fff6e9 !important;
 }
 
-/* LOGO - "Traço" sempre escuro, "Vivo" sempre rosa */
-html.dark .text-electric { color: #0044ff !important; }
-html.dark header span.font-display { color: #1b1030 !important; }
-
-/* FAQ - texto ESCURO nos cards claros */
-html.dark #duvidas button {
-  color: #1b1030 !important;
+html.dark #orcamento a,
+html.dark footer a {
+  color: #fff6e9 !important;
 }
 
-html.dark #duvidas button > span {
-  color: #1b1030 !important;
+/* FAQ - fundo CLARO com texto ESCURO (contraste) */
+html.dark #duvidas {
+  background-color: #120a21;
 }
 
 html.dark #duvidas .bg-white {
@@ -251,11 +268,18 @@ html.dark #duvidas .bg-sun {
   background-color: #ffd23f !important;
 }
 
+html.dark #duvidas button {
+  color: #1b1030 !important;
+}
+
+html.dark #duvidas button > span {
+  color: #1b1030 !important;
+}
+
 html.dark #duvidas .text-ink\/85 {
   color: rgba(27, 16, 48, 0.9) !important;
 }
 
-/* Forçar cor escura nas perguntas do FAQ */
 html.dark #duvidas button.font-display {
   color: #1b1030 !important;
 }
@@ -268,3 +292,7 @@ html.dark .marker {
   background: linear-gradient(transparent 58%, #7b4dff 58%, #7b4dff 90%, transparent 90%);
   padding: 0 0.15em;
 }
+
+/* Logo */
+html.dark .text-electric { color: #0044ff !important; }
+html.dark header span.font-display { color: #1b1030 !important; }

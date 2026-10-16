@@ -13,6 +13,9 @@ export const nav = [
   { href: '#duvidas', label: 'Dúvidas' },
 ]
 
+// ✅ LISTA ADICIONADA DE VOLTA PARA O MARQUEE FUNCIONAR!
+export const eventTypes = ['Casamentos', '15 Anos', 'Aniversários', 'Corporativo', 'Festas Infantis', 'Família']
+
 export const howItWorks = [
   {
     step: '01',

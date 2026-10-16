@@ -1,18 +1,9 @@
-// Todos os textos, contatos e dados do site estão aqui.
-export const contact = {
-  phoneDisplay: '(61) 99346-1625',
-  whatsapp: '5561993461625',
-  instagram: 'gilalmeidaart',
-  email: 'contato@seuemail.com',
-}
+export const siteName = 'TraçoVivo — Caricaturas ao vivo em Brasília'
+export const siteDescription =
+  'Caricaturas desenhadas a lápis, na hora, durante a sua festa. Cada convidado leva sua arte exclusiva — a lembrancinha que ninguém joga fora. Casamentos, 15 anos, aniversários e eventos corporativos em Brasília - DF.'
 
-export const whatsappLink = (text = 'Oi Gil! Quero caricaturas ao vivo na minha festa ') =>
-  `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(text)}`
-
-export const instagramLink = `https://instagram.com/${contact.instagram}`
-
-   // Caminho direto e simples que funciona localmente e na Netlify
-   export const img = (file: string, w: number) => `/img/${file}`
+export const whatsappNumber = '5561993461625'
+export const whatsappLink = () => `https://wa.me/${whatsappNumber}?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20caricaturas%20ao%20vivo.`
 
 export const nav = [
   { href: '#como-funciona', label: 'Como funciona' },
@@ -22,138 +13,110 @@ export const nav = [
   { href: '#duvidas', label: 'Dúvidas' },
 ]
 
-export const eventTypes = [
-  { emoji: '💍', label: 'Casamentos' },
-  { emoji: '🎂', label: '15 anos' },
-  { emoji: '🎉', label: 'Aniversários' },
-  { emoji: '💼', label: 'Corporativo' },
-  { emoji: '🎓', label: 'Formaturas' },
-  { emoji: '👶', label: 'Chá revelação' },
-  { emoji: '🎈', label: 'Festa infantil' },
-  { emoji: '💑', label: 'Bodas' },
+export const howItWorks = [
+  {
+    step: '01',
+    icon: '✏️',
+    title: 'Desenho ao vivo',
+    description: 'O convidado senta, faz pose e eu desenho na hora, a lápis, no papel. Todo mundo assiste e se diverte — vira a atração da festa!',
+  },
+  {
+    step: '02',
+    icon: '🎁',
+    title: 'Arte exclusiva',
+    description: 'Em poucos minutos, a caricatura é finalizada e entregue diretamente ao convidado, como uma lembrança física, única e cheia de alma.',
+  },
+  {
+    step: '03',
+    icon: '💛',
+    title: 'Lembrança eterna',
+    description: 'Diferente de fotos que se perdem no celular, o desenho a lápis é uma recordação tangível e especial que ninguém joga fora.',
+  },
 ]
 
-export const steps = [
+export const packages = [
   {
-    n: '01',
-    emoji: '✍️',
-    title: 'Desenho ao vivo',
-    text: 'O convidado senta, faz pose e eu desenho na hora no tablet. Todo mundo assiste — vira atração da festa!',
-    color: 'bg-pink',
-  },
-  {
-    n: '02',
-    emoji: '🖨️',
-    title: 'Impressão na hora',
-    text: 'Em poucos minutos a caricatura sai impressa em papel fotográfico, com moldura do tema do seu evento.',
-    color: 'bg-sun',
-  },
-  {
-    n: '03',
-    emoji: '📲',
-    title: 'Lembrança + digital',
-    text: 'O convidado leva o desenho pra casa e recebe o arquivo para postar nas redes. Sua festa viraliza.',
+    name: 'Pocket',
+    duration: '2 horas',
+    price: 'Sob consulta',
+    features: [
+      'Desenho a lápis no papel',
+      'Até 20-25 convidados',
+      'Ideal para churrascos e reuniões menores',
+      'Deslocamento incluso no DF',
+    ],
     color: 'bg-mint',
+    highlight: false,
+  },
+  {
+    name: 'Festa Completa',
+    duration: '3 horas',
+    price: 'Sob consulta',
+    features: [
+      'Desenho a lápis no papel',
+      'Até 35-40 convidados',
+      'Perfeito para aniversários e 15 anos',
+      'Deslocamento incluso no DF',
+      'Opção de tema personalizado',
+    ],
+    color: 'bg-pink',
+    highlight: true,
+  },
+  {
+    name: 'Evento Grande',
+    duration: '4 horas ou mais',
+    price: 'Sob consulta',
+    features: [
+      'Desenho a lápis no papel',
+      'Até 50+ convidados',
+      'Ideal para casamentos e corporativo',
+      'Deslocamento incluso no DF',
+      'Opção de tema personalizado',
+    ],
+    color: 'bg-sun',
+    highlight: false,
   },
 ]
 
 export const gallery = [
   { file: 'casamento.png', label: 'Casamentos', color: 'bg-pink', rotate: '-rotate-3' },
-  { file: 'quinze.png', label: '15 anos', color: 'bg-grape', rotate: 'rotate-2' },
-  { file: 'aniversario.png', label: 'Aniversários', color: 'bg-sun', rotate: '-rotate-1' },
-  { file: 'corporativo.png', label: 'Corporativo', color: 'bg-mint', rotate: 'rotate-3' },
-  { file: 'infantil.png', label: 'Festa infantil', color: 'bg-tang', rotate: '-rotate-2' },
+  { file: 'quinze.png', label: '15 Anos', color: 'bg-mint', rotate: 'rotate-2' },
+  { file: 'aniversario.png', label: 'Aniversários', color: 'bg-sun', rotate: '-rotate-2' },
+  { file: 'corporativo.png', label: 'Corporativo', color: 'bg-grape', rotate: 'rotate-3' },
+  { file: 'infantil.png', label: 'Infantil', color: 'bg-tang', rotate: '-rotate-1' },
   { file: 'familia.png', label: 'Família', color: 'bg-pink', rotate: 'rotate-1' },
-]
-
-export const packages = [
-  {
-    id: 'pocket',
-    name: 'Pocket',
-    hours: '2 horas',
-    hoursValue: '2h',
-    count: 'até ~30 caricaturas',
-    features: [
-      'Desenho digital ao vivo no tablet',
-      'Impressão na hora em papel fotográfico',
-      'Arquivo digital por convidado',
-    ],
-    featured: false,
-    color: 'bg-white',
-    rotate: 'md:-rotate-2',
-  },
-  {
-    id: 'completa',
-    name: 'Festa Completa',
-    hours: '3 horas',
-    hoursValue: '3h',
-    count: 'até ~45 caricaturas',
-    features: [
-      'Tudo do Pocket',
-      'Moldura personalizada com o tema da festa',
-      'Telão com os desenhos ao vivo',
-      'Galeria online para os convidados',
-    ],
-    featured: true,
-    color: 'bg-sun',
-    rotate: 'md:rotate-0',
-  },
-  {
-    id: 'grande',
-    name: 'Evento Grande',
-    hours: '4h ou mais',
-    hoursValue: '4h+',
-    count: '60+ caricaturas',
-    features: [
-      'Tudo da Festa Completa',
-      'Logo da empresa ou dos noivos na arte',
-      'Ideal para corporativo e casamentos',
-    ],
-    featured: false,
-    color: 'bg-white',
-    rotate: 'md:rotate-2',
-  },
 ]
 
 export const testimonials = [
   {
-    name: 'Larissa & Pedro',
-    initials: 'L&P',
-    event: 'Casamento · Lago Sul',
-    quote: 'A fila pra caricatura não acabava! Os convidados amaram e até hoje recebo fotos dos desenhos na geladeira dos amigos.',
-    color: 'bg-pink',
-    rotate: '-rotate-2',
+    name: 'Mariana S.',
+    role: 'Noiva',
+    text: 'Foi a atração principal do casamento! Os convidados amaram receber o desenho a lápis, é muito mais especial e pessoal que uma foto comum.',
   },
   {
-    name: 'Marina',
-    initials: 'M',
-    event: '15 anos da Júlia · Águas Claras',
-    quote: 'Foi a atração da festa. A moldura com o tema ficou linda e as amigas postaram tudo no mesmo dia.',
-    color: 'bg-mint',
-    rotate: 'rotate-1',
+    name: 'Carlos E.',
+    role: 'Aniversariante',
+    text: 'O Gil tem um traço incrível e faz todo mundo rir na hora da pose. A lembrança no papel ficou linda e todo mundo quis levar a sua!',
   },
   {
-    name: 'Equipe de RH',
-    initials: 'RH',
-    event: 'Confraternização · Asa Norte',
-    quote: 'Profissional, pontual e super simpático(a). Engajou o time inteiro. Já queremos de novo no próximo evento.',
-    color: 'bg-grape',
-    rotate: '-rotate-1',
+    name: 'Fernanda L.',
+    role: 'Organizadora de Eventos',
+    text: 'Contratamos para um evento corporativo e foi um sucesso absoluto. Profissionalismo, pontualidade e arte de verdade.',
   },
 ]
 
 export const faqs = [
   {
     q: 'Como funciona?',
-    a: 'Eu desenho cada convidado na hora, durante a festa. É rápido (uns 5 minutinhos por desenho) e super divertido, quem tá na fila já vai se animando vendo os outros sendo desenhados!',
+    a: 'Eu desenho cada convidado na hora, a lápis, durante a festa. É rápido (uns 5 minutinhos por desenho) e super divertido — quem tá na fila já vai se animando vendo os outros sendo desenhados!',
   },
   {
     q: 'Quanto tempo leva cada desenho?',
-    a: 'Em média 5 minutos. Dá pra atender umas 12-15 pessoas por hora tranquilamente.',
+    a: 'Em média 5 minutos. Dá pra atender umas 12 a 15 pessoas por hora tranquilamente.',
   },
   {
     q: 'O que eu preciso providenciar?',
-    a: 'Só uma mesinha, duas cadeiras e um ponto de luz por perto. Todo o material de desenho eu levo!',
+    a: 'Só uma mesinha, duas cadeiras e um ponto de luz por perto. Todo o material de desenho (lápis, papel, prancheta) eu levo!',
   },
   {
     q: 'Vocês atendem fora de Brasília?',
@@ -161,6 +124,9 @@ export const faqs = [
   },
   {
     q: 'Dá para personalizar com o tema da festa?',
-    a: 'Dá sim! Posso adaptar o estilo do desenho, as cores e até incluir elementos do tema da sua festa.',
+    a: 'Dá sim! Posso adaptar o estilo do desenho, usar papéis coloridos ou incluir pequenos elementos do tema da sua festa no traço.',
   },
 ]
+
+// Caminho direto e simples que funciona localmente e na Netlify
+export const img = (file: string, w: number) => `/img/${file}`

@@ -13,10 +13,11 @@ export const nav = [
   { href: '#duvidas', label: 'Dúvidas' },
 ]
 
-// ✅ LISTA ADICIONADA DE VOLTA PARA O MARQUEE FUNCIONAR!
+// ✅ NOME CORRETO PARA O MARQUEE
 export const eventTypes = ['Casamentos', '15 Anos', 'Aniversários', 'Corporativo', 'Festas Infantis', 'Família']
 
-export const howItWorks = [
+// ✅ NOME CORRETO PARA O HOW IT WORKS (O componente espera "steps")
+export const steps = [
   {
     step: '01',
     icon: '✏️',
@@ -131,5 +132,4 @@ export const faqs = [
   },
 ]
 
-// Caminho direto e simples que funciona localmente e na Netlify
 export const img = (file: string, w: number) => `/img/${file}`

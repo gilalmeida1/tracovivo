@@ -5,6 +5,14 @@ export const siteDescription =
 export const whatsappNumber = '5561993461625'
 export const whatsappLink = () => `https://wa.me/${whatsappNumber}?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20caricaturas%20ao%20vivo.`
 
+// ✅ Links e Contatos (que a Galeria e o Footer precisam)
+export const instagramLink = 'https://instagram.com/gilalmeidaart'
+export const contact = {
+  phone: '(61) 99346-1625',
+  email: 'contato@gilalmeidaarte.com.br',
+  instagram: '@gilalmeidaart'
+}
+
 export const nav = [
   { href: '#como-funciona', label: 'Como funciona' },
   { href: '#galeria', label: 'Galeria' },
@@ -13,10 +21,10 @@ export const nav = [
   { href: '#duvidas', label: 'Dúvidas' },
 ]
 
-// ✅ NOME CORRETO PARA O MARQUEE
+// ✅ Para o Marquee (faixa de texto)
 export const eventTypes = ['Casamentos', '15 Anos', 'Aniversários', 'Corporativo', 'Festas Infantis', 'Família']
 
-// ✅ NOME CORRETO PARA O HOW IT WORKS (O componente espera "steps")
+// ✅ Para o "Como Funciona"
 export const steps = [
   {
     step: '01',
@@ -132,4 +140,5 @@ export const faqs = [
   },
 ]
 
+// Função para caminhos de imagem
 export const img = (file: string, w: number) => `/img/${file}`

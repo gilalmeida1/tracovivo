@@ -107,7 +107,7 @@ Local: ${data.get('local') || '-'}`,
         <div className="rounded-[2.25rem] bg-paper sticker p-6 md:p-9 rotate-1">
           {status === 'sent' ? (
             <div className="text-center py-10 animate-pop">
-              <p className="text-7xl" aria-hidden="true">🥳</p>
+              <p className="text-7xl" aria-hidden="true"></p>
               <h3 className="font-display font-extrabold text-4xl mt-4">Recebi! Oba!</h3>
               <p className="mt-3 text-lg text-ink/80 max-w-md mx-auto">
                 Seu pedido chegou direitinho. Já já te respondo com o orçamento. Quer agilizar? Me chama no WhatsApp:
@@ -173,7 +173,8 @@ Local: ${data.get('local') || '-'}`,
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <Field label="Tipo de festa *">
-                  <select className="field" name="tipo" required defaultValue="">
+                  {/* ✅ AQUI ESTÁ A CORREÇÃO: adicionei text-ink */}
+                  <select className="field text-ink" name="tipo" required defaultValue="">
                     <option value="" disabled>Escolha...</option>
                     {eventTypes.map((t) => (
                       <option key={t.label} value={t.label}>{t.emoji} {t.label}</option>

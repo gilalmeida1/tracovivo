@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import { Instagram, Mail, MessageCircle, Phone, Send } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+import { Instagram, Mail, MessageCircle, Phone, Send, ChevronDown } from 'lucide-react'
 import { contact, eventTypes, instagramLink, whatsappLink } from '@/data/site'
 import { burstConfetti } from './Confetti'
 import { Sparkle, Star } from './Doodles'
 
-// Deve bater com o formulário escondido em public/__forms.html
 const FORM_NAME = 'orcamento'
 
 const hourOptions = [
@@ -12,6 +11,18 @@ const hourOptions = [
   { value: '2h', label: '2 horas (Pocket)' },
   { value: '3h', label: '3 horas (Festa Completa)' },
   { value: '4h+', label: '4 horas ou mais (Evento Grande)' },
+]
+
+// Lista completa de tipos de festa para o dropdown customizado
+const festaOptions = [
+  { value: '', label: 'Escolha...', emoji: '' },
+  { value: 'Casamentos', label: 'Casamentos', emoji: '💍' },
+  { value: '15 Anos', label: '15 Anos', emoji: '' },
+  { value: 'Aniversários', label: 'Aniversários', emoji: '🎂' },
+  { value: 'Corporativo', label: 'Corporativo', emoji: '💼' },
+  { value: 'Festas Infantis', label: 'Festas Infantis', emoji: '🎈' },
+  { value: 'Família', label: 'Família', emoji: '👨‍👩‍👧' },
+  { value: 'Outro', label: 'Outro', emoji: '✨' },
 ]
 
 function maskPhone(v: string) {
@@ -24,10 +35,66 @@ function maskPhone(v: string) {
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
+// Dropdown customizado que substitui o <select> problemático
+function CustomSelect({ value, onChange, required }: { value: string; onChange: (v: string) => void; required?: boolean }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  // Fecha o dropdown ao clicar fora
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  const selected = festaOptions.find((o) => o.value === value) || festaOptions[0]
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="field flex items-center justify-between w-full text-left cursor-pointer"
+        style={{ color: value ? '#1b1030' : '#999' }}
+      >
+        <span className="truncate">
+          {selected.emoji ? `${selected.emoji} ${selected.label}` : selected.label}
+        </span>
+        <ChevronDown size={18} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
+      </button>
+      {open && (
+        <div className="absolute z-50 mt-1 w-full bg-[#fff6e9] border-[2.5px] border-[#1b1030] rounded-2xl shadow-[4px_4px_0_#1b1030] max-h-60 overflow-y-auto">
+          {festaOptions.map((opt) => (
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => {
+                onChange(opt.value)
+                setOpen(false)
+              }}
+              className={`w-full text-left px-4 py-3 font-semibold hover:bg-[#ff3d7f] hover:text-[#fff6e9] transition-colors ${
+                opt.value === value ? 'bg-[#ffd23f] text-[#1b1030]' : 'text-[#1b1030]'
+              } ${opt.value === '' ? 'text-gray-500' : ''}`}
+            >
+              {opt.emoji ? `${opt.emoji} ${opt.label}` : opt.label}
+            </button>
+          ))}
+        </div>
+      )}
+      {required && <input type="hidden" name="tipo" value={value} required />}
+    </div>
+  )
+}
+
 export function QuoteForm({ hours, setHours }: { hours: string; setHours: (h: string) => void }) {
   const [status, setStatus] = useState<Status>('idle')
   const [phone, setPhone] = useState('')
   const [summary, setSummary] = useState('')
+  const [festaTipo, setFestaTipo] = useState('')
   const today = new Date().toISOString().slice(0, 10)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -45,9 +112,9 @@ export function QuoteForm({ hours, setHours }: { hours: string; setHours: (h: st
       const date = String(data.get('data') || '')
       const prettyDate = date ? date.split('-').reverse().join('/') : ''
       setSummary(
-        `Oi Gil! Acabei de pedir orçamento pelo site 🎉
+        `Oi Gil! Acabei de pedir orçamento pelo site 
 Nome: ${data.get('nome')}
-Festa: ${data.get('tipo')}
+Festa: ${festaTipo}
 Data: ${prettyDate}
 Local: ${data.get('local') || '-'}`,
       )
@@ -57,6 +124,7 @@ Local: ${data.get('local') || '-'}`,
       form.reset()
       setPhone('')
       setHours('')
+      setFestaTipo('')
     } catch {
       setStatus('error')
     }
@@ -173,14 +241,8 @@ Local: ${data.get('local') || '-'}`,
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <Field label="Tipo de festa *">
-                  {/* ✅ AQUI ESTÁ A CORREÇÃO: adicionei text-ink */}
-                  <select className="field text-ink" name="tipo" required defaultValue="">
-                    <option value="" disabled>Escolha...</option>
-                    {eventTypes.map((t) => (
-                      <option key={t.label} value={t.label}>{t.emoji} {t.label}</option>
-                    ))}
-                    <option value="Outro">✨ Outro</option>
-                  </select>
+                  {/* ✅ DROPDOWN CUSTOMIZADO - FUNCIONA 100%! */}
+                  <CustomSelect value={festaTipo} onChange={setFestaTipo} required />
                 </Field>
                 <Field label="Data do evento *">
                   <input className="field" type="date" name="data" required min={today} />

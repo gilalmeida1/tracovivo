@@ -296,36 +296,37 @@ html.dark .marker {
 /* Logo */
 html.dark .text-electric { color: #0044ff !important; }
 html.dark header span.font-display { color: #1b1030 !important; }
-/* ===== CORREÇÃO NUCLEAR DO DROPDOWN (SELECT) ===== */
-select.field,
-select.field option,
-select.field optgroup {
+/* ===== CORREÇÃO FINAL DO SELECT - FORÇAR COR NAS OPÇÕES ===== */
+#orcamento select[name="tipo"] {
   color: #1b1030 !important;
   background-color: #fff6e9 !important;
-  font-weight: 600 !important;
 }
 
-select.field option:hover,
-select.field option:focus,
-select.field option:checked {
+#orcamento select[name="tipo"] option {
+  color: #1b1030 !important;
+  background-color: #fff6e9 !important;
+  font-weight: 600;
+}
+
+#orcamento select[name="tipo"] option:hover,
+#orcamento select[name="tipo"] option:checked {
+  background-color: #ff3d7f !important;
   color: #fff6e9 !important;
-  background-color: #ff3d7f !important; /* Rosa de destaque */
-  font-weight: 700 !important;
 }
 
 /* Modo escuro */
-html.dark select.field,
-html.dark select.field option,
-html.dark select.field optgroup {
+html.dark #orcamento select[name="tipo"] {
   color: #1b1030 !important;
   background-color: #fff6e9 !important;
-  font-weight: 600 !important;
 }
 
-html.dark select.field option:hover,
-html.dark select.field option:focus,
-html.dark select.field option:checked {
-  color: #fff6e9 !important;
+html.dark #orcamento select[name="tipo"] option {
+  color: #1b1030 !important;
+  background-color: #fff6e9 !important;
+}
+
+html.dark #orcamento select[name="tipo"] option:hover,
+html.dark #orcamento select[name="tipo"] option:checked {
   background-color: #ff3d7f !important;
-  font-weight: 700 !important;
+  color: #fff6e9 !important;
 }

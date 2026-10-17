@@ -295,4 +295,25 @@ html.dark .marker {
 
 /* Logo */
 html.dark .text-electric { color: #0044ff !important; }
-html.dark header span.font-display { color: #1b1030 !important; }
+html.dark header span.font-display { color: #1b1030 !important; }/* ===== CORREÇÃO DO DROPDOWN (SELECT) DO FORMULÁRIO ===== */
+/* Força a cor do texto e fundo no modo claro */
+select.field {
+  color: var(--color-ink) !important;
+  background-color: white !important;
+}
+
+select.field option {
+  color: var(--color-ink) !important;
+  background-color: white !important;
+}
+
+/* Força a cor do texto e fundo no modo escuro */
+html.dark select.field {
+  color: #1b1030 !important; /* Texto escuro para ler fácil */
+  background-color: #fff6e9 !important; /* Fundo claro */
+}
+
+html.dark select.field option {
+  color: #1b1030 !important;
+  background-color: #fff6e9 !important;
+}

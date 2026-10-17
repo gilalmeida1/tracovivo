@@ -296,37 +296,37 @@ html.dark .marker {
 /* Logo */
 html.dark .text-electric { color: #0044ff !important; }
 html.dark header span.font-display { color: #1b1030 !important; }
-/* ===== CORREÇÃO FINAL DO SELECT - FORÇAR COR NAS OPÇÕES ===== */
+
+/* ===== CORREÇÃO DO CAMPO TIPO DE EVENTO ===== */
+
+/* Campo fechado */
 #orcamento select[name="tipo"] {
   color: #1b1030 !important;
   background-color: #fff6e9 !important;
+  -webkit-text-fill-color: #1b1030;
+  color-scheme: light;
+  opacity: 1 !important;
 }
 
+/* Opções do menu suspenso */
 #orcamento select[name="tipo"] option {
   color: #1b1030 !important;
-  background-color: #fff6e9 !important;
+  background-color: #ffffff !important;
   font-weight: 600;
+  opacity: 1 !important;
 }
 
-#orcamento select[name="tipo"] option:hover,
-#orcamento select[name="tipo"] option:checked {
-  background-color: #ff3d7f !important;
-  color: #fff6e9 !important;
-}
-
-/* Modo escuro */
-html.dark #orcamento select[name="tipo"] {
-  color: #1b1030 !important;
-  background-color: #fff6e9 !important;
-}
-
+/* Manter as cores mesmo no modo escuro */
+html.dark #orcamento select[name="tipo"],
 html.dark #orcamento select[name="tipo"] option {
   color: #1b1030 !important;
-  background-color: #fff6e9 !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: #1b1030;
+  color-scheme: light;
 }
 
-html.dark #orcamento select[name="tipo"] option:hover,
-html.dark #orcamento select[name="tipo"] option:checked {
-  background-color: #ff3d7f !important;
-  color: #fff6e9 !important;
+/* Opção selecionada */
+#orcamento select[name="tipo"] option:checked {
+  color: #1b1030 !important;
+  background-color: #ffd23f !important;
 }
